@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import TextField from '@mui/material/TextField';
-import Geocode from "react-geocode";
-import Stack from '@mui/material/Stack';
+
 import Button from '@mui/material/Button';
 import './MainPage.css'
 import axios from 'axios';
@@ -22,8 +21,8 @@ export default function MainPage() {
         setData({})
         setIsdata(false)
         try {
-            const res = await axios.get(`http://api.weatherapi.com/v1/current.json?key=${Weaapi}&q=${cityName}`)
-            console.log(res.data);
+            const res = await axios.get(`https://api.weatherapi.com/v1/current.json?key=${Weaapi}&q=${cityName}`)
+            // console.log(res.data);
             setData(res.data)
             setIsdata(true)
             // console.log(data);
@@ -40,12 +39,8 @@ export default function MainPage() {
         }
     }
     
-    const top100Films = [
-        { title: 'The Shawshank Redemption', year: 1994 },
-        { title: 'The Godfather', year: 1972 },
-        { title: 'The Godfather: Part II', year: 1974 },
-        { title: 'The Dark Knight', year: 2008 }]
-    console.log(cityName);
+   
+    // console.log(cityName);
     return (
         <>
             <header className="App-header">

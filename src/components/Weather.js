@@ -16,11 +16,11 @@ import prec from '../assets/icons/rainy.png'
 import visi from '../assets/icons/visi.png'
 import wind from '../assets/icons/wind.png'
 export default function Weather(props) {
-    const isDay = true
-    const {is_day,feelslike_c,temp_c,humidity,precip_mm,pressure_in,vis_km,wind_kph} = props.data.current
+    
+    const {feelslike_c,temp_c,humidity,precip_mm,pressure_in,vis_km,wind_kph} = props.data.current
     const {text,icon} = props.data.current.condition
     const {name, country,region} = props.data.location
-    console.log(props.data);
+    
     return (<>
         <div className="modalBox">
             <div className="mainData">
